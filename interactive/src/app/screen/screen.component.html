@@ -1,0 +1,26 @@
+<div id="info" *ngIf="deviceOrientation">
+    <orientation-info [deviceOrientation]="deviceOrientation"></orientation-info>
+    <cursor-info [cursorPosition]="cursorPosition"></cursor-info>
+</div>
+
+<div id="connection-prompt" *ngIf="!cursorPosition">
+    <p>Aim device and press the blue button...</p>
+    <img id="target" src="../../assets/images/target.svg">
+
+</div>
+
+<div id="cursor" *ngIf="cursorPosition" [style.left.px]='cursorPosition.x' [style.top.px]='cursorPosition.y' [style.transform]="'rotate(' + (cursorPosition ? cursorPosition.rotation : 0) + 'deg)'"></div>
+
+
+<div id="outer-square" [class.active]="cursorPosition">
+    <app-grid-item [cursorPosition]="cursorPosition"></app-grid-item>
+    <app-grid-item [cursorPosition]="cursorPosition"></app-grid-item>
+    <app-grid-item [cursorPosition]="cursorPosition"></app-grid-item>
+    <app-grid-item [cursorPosition]="cursorPosition"></app-grid-item>
+    <app-grid-item [cursorPosition]="cursorPosition"></app-grid-item>
+    <app-grid-item [cursorPosition]="cursorPosition"></app-grid-item>
+    <app-grid-item [cursorPosition]="cursorPosition"></app-grid-item>
+    <app-grid-item [cursorPosition]="cursorPosition"></app-grid-item>
+    <app-grid-item [cursorPosition]="cursorPosition"></app-grid-item>
+
+</div>

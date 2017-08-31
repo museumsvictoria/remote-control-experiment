@@ -1,0 +1,25 @@
+/*.inner-grid {
+    width: 33.3%;
+    height: 33.3%;
+    border: 5px solid #fff;
+    display: table;
+}*/
+
+.inner-square {
+    color: #333;
+    background: #000;
+    line-height: 100%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.inner-square.active {
+    background: #aaa;
+}
+
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}

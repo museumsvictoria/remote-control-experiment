@@ -1,0 +1,16 @@
+<div id="info" *ngIf="transmitting">
+    <orientation-info [deviceOrientation]="deviceOrientation"></orientation-info>
+    <dl>
+        <dt>Alpha</dt>
+        <dd>{{deviceOrientation.alpha}}</dd>
+        <dt>Initial Alpha</dt>
+        <dd>{{initialAlpha}}</dd>
+        <dt>Beta</dt>
+        <dd>{{deviceOrientation.beta}}</dd>
+        <dt>Gamma</dt>
+        <dd>{{deviceOrientation.gamma}}</dd>
+    </dl>
+</div>
+
+
+<div id="remote-button" (press)="startTransmitting()" [class.active]="transmitting"></div>

@@ -1,0 +1,20 @@
+#menu {
+    width: 300px;
+    height: 200px;
+    margin: 100px auto;
+}
+
+a {
+    font-size: 25px;
+    padding: 15px 0;
+    border: 1px solid #000;
+    display: block;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+a:hover {
+    background: #ddd
+}

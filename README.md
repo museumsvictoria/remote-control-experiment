@@ -56,31 +56,20 @@ The screen page is listening in to these websocket broadcasts. When it receives 
 - [websockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
 - [DeviceOrientationEvent](https://developer.mozilla.org/en-US/docs/Web/Events/deviceorientation) 
 
-## Running
-You'll need a device Mac or pc with [Node.js](https://nodejs.org/en/) installed, and a mobile device on the same network (tethering works too). The mobile device needs to be able to browse to the pc's IP address on port 4200 (default). 
+## Prerequisites
+You'll need
+- a Mac/PC with [Node.js](https://nodejs.org/en/) installed,
+- a mobile device
 
+The mobile device needs to be able to browse to the pc's IP address on port 4200 so it will need to be on the same network or tethered.
 
-### Installation
+### Running
 1. Clone this repo
-2. cd to the **server** folder and enter `npm install -s` from the command line to get all the websocket server dependencies.
-4. cd to the **interactive** folder and enter `npm install -s` from the command line to get all the interactive dependencies.
+2. cd into the folder and enter `npm install -s` from the command line to get all dependencies.
+3. enter `npm run serve-dev`
 
-### Launching
+This command does two things: it (a) starts a web server to serve the app pages on port 4200 and (b) starts a socket.io server on port 8100 to handle the communication between the device and screen page instances
 
-#### A) start the websocket server
-
-1. open a terminal/command prompt
-2. cd to the websocket-server folder
-2. Enter `node server`
-
-#### B) start the interactive web-server
-1. open a second terminal/command prompt instance
-2. cd to the interactive directory
-3. Enter `npm start`
-
-Note: npm start runs the command `ng serve  --host 0.0.0.0  --disable-host-check`. The host option enables access from a device other than localhost.
-
-#### C) go!
-On your desktop, open http://localhost:4200 and click on 'screen'
-
-On a mobile device, open http://[web-server-ip-address]:4200 and tap "device"
+Okay, so now it's going, just cross your fingers and: 
+- on the desktop, open http://localhost:4200 and click on 'screen'
+- on the mobile device, open http://[desktop-ip-address]:4200 and tap "device"

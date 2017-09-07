@@ -3,12 +3,12 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
-        "ng": "ng",
-        "start": "ng serve  --host 0.0.0.0  --disable-host-check",
-        "build": "ng build",
-        "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e"
+        "test": "ng test",
+        "build-dev": "ng build; mkdir dist/server; cp server/* dist",
+        "build-prod": "ng build -prod; mkdir dist/server; cp server/* dist",
+        "start-dev": "ng serve  --host 0.0.0.0 --disable-host-check & node server/socket-server.js",
+        "start-prod": "npm run build-prod; node dist/socket-server.js & node dist/app-server.js"
     },
     "private": true,
     "dependencies": {
@@ -26,9 +26,10 @@
         "hammer-time": "^2.0.1",
         "hammerjs": "^2.0.8",
         "rxjs": "^5.4.2",
-        "socket.io-client": "^2.0.3",
+        "socket.io": "^2.0.3",
         "ts-helpers": "^1.1.1",
-        "zone.js": "^0.8.14"
+        "zone.js": "^0.8.14",
+        "express": "^4.13.4"
     },
     "devDependencies": {
         "@angular/cli": "1.3.2",

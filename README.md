@@ -66,7 +66,7 @@ The mobile device needs to be able to browse to the pc's IP address on port 4200
 ### Running
 1. Clone this repo
 2. cd into the folder and enter `npm install -s` from the command line to get all dependencies.
-3. enter `npm start-dev`
+3. enter `npm run start-dev`
 
 This second command does two things: it (a) starts a web server to serve the app pages on port 4200 and (b) starts a socket.io server on port 8100 to handle the communication between the device and screen page instances
 

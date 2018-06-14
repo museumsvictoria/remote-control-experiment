@@ -13,7 +13,6 @@ import { CoordinateService } from './services/coordinate.service';
 import { ConfigService } from './services/config.service';
 import { OrientationMessageService } from './services/orientationMessage.service';
 
-import { RelativeOrientationService } from './services/relative-orientation.service';
 import { OrientationInfoComponent } from './orientation-info/orientation-info.component';
 import { CursorInfoComponent } from './cursor-info/cursor-info.component';
 import { GridItemComponent } from './grid-item/grid-item.component';
@@ -37,7 +36,7 @@ export class MyHammerConfig extends HammerGestureConfig  {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,  
+    HomeComponent,
     PageNotFoundComponent,
     DeviceComponent,
     ScreenComponent,
@@ -55,9 +54,9 @@ export class MyHammerConfig extends HammerGestureConfig  {
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [OrientationMessageService, CoordinateService, ConfigService, RelativeOrientationService, { 
-                    provide: HAMMER_GESTURE_CONFIG, 
-                    useClass: MyHammerConfig 
+  providers: [OrientationMessageService, CoordinateService, ConfigService, {
+                    provide: HAMMER_GESTURE_CONFIG,
+                    useClass: MyHammerConfig
                 }],
   bootstrap: [AppComponent]
 })

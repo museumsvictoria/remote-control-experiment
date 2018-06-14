@@ -1,8 +1,8 @@
-export class CompassUtils{
+export class CompassUtils {
 
-  constructor() { }
 
-    public static GetDeltaAngle(from : number, to: number) : number {
+  public static GetDeltaAngle(from: number, to: number): number {
+
 
     var deltaAngle = from - to;
 
@@ -21,5 +21,4 @@ export class CompassUtils{
     return deltaAngle;
 
   }
-
 }
